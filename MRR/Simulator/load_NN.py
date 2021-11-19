@@ -14,7 +14,7 @@ n = 100000
 model_DNN = load_NN(n,number_of_rings)
 L=np.array([82.4e-6,82.4e-6,55.0e-6,55.0e-6])                             #予測個数
 pre_data_K = np.array(read_K(pre_number,number_of_rings)) #予測用のK
-file_name = "MRR/data/pred_K" + str(number_of_rings) + "_" + str(n) +".csv"
+file_name = "../data/pred_K" + str(number_of_rings) + "_" + str(n) +".csv"
 with open(file_name,"w",newline="") as file:
     writer = csv.writer(file)
     for i in range(pre_number):
