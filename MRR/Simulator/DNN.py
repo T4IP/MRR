@@ -55,7 +55,7 @@ model_DNN.compile(optimizer = Adam(lr=0.001), loss="mean_squared_error", metrics
 print(model_DNN.summary())
 
 #CallBacks
-filename = "C:\\Users\\taipa\\Documents\\研究室\\プログラム\\MRR\\DNN" + str(number_of_rings) + "_" + str(n) +".h5"
+filename = "../DNN" + str(number_of_rings) + "_" + str(n) +".h5"
 checkpoint = ModelCheckpoint(filepath=filename, monitor="loss",verbose=0,save_best_only=True,save_weights_only=False,mode="min",period=1)
 
 
@@ -70,7 +70,7 @@ plt.ylabel("loss")
 plt.ylim(0,20)
 plt.legend(bbox_to_anchor=(1,0),loc="lower right")
 plt.show()
-plt.savefig("C:\\Users\\taipa\\Documents\\研究室\\プログラム\\MRR\\figure.jpg")
+plt.savefig("../figure.jpg")
 
 #予測開始
 pre_number = 10                                 #予測個数
