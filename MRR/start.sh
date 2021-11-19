@@ -10,3 +10,7 @@ pip install --upgrade pip
 pip install -r requirements.txt
 
 ulimit -n 8096
+cd Simulator
+python load_NN.py
+# gsutil cp -r result gs://mrr-result
+sudo poweroff
