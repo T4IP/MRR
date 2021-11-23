@@ -50,3 +50,14 @@ def mean_percentage_squared_error(y_true,y_pred):   #平均二乗パーセント
     percentage_error = (y_true - y_pred) / y_true
     loss = tf.math.reduce_mean(percentage_error**2)
     return loss
+
+def graph_integrate(data1:np.array,data2:np.array):
+    if len(data1)==len(data2):
+        area_data = data1 - data2
+        area = 0
+        for i in range(len(area_data)):
+            area += abs(area_data[i])
+        return area
+    else:
+        print("length of datas is not match")
+        return
