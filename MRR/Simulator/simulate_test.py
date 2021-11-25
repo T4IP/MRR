@@ -2,9 +2,6 @@ import numpy as np
 from typing import Any, Dict, List
 import matplotlib.pyplot as plt
 from generate_figure import generate_figure
-from mymath import graph_integrate
-
-
 
 class TransferFunction:
     """Simulator of the transfer function of the MRR filter.
@@ -104,20 +101,14 @@ def build_TransferFunction(config):
 #K=np.array([0.2, 0.07, 0.47, 0.31, 0.06, 0.31, 0.32, 0.42, 0.49])
 L=np.array([82.4e-6,82.4e-6,55.0e-6,55.0e-6])
 K=np.array([0.37,0.39,0.74,0.22,0.44])
+
 xaxis = np.arange(1540e-9,1560e-9,0.01e-9)          #シミュレーション範囲1.54µ~1.56µ
 axis = np.arange(1540,1560.01,0.01)
 data = TransferFunction(L,K,config={'center_wavelength':1550e-9,'eta':0.996,'n_eff':2.2,'n_g':4.4,'alpha':52.96})
 trans_data1 = data.simulate(xaxis)
 plt.plot(axis,trans_data1,label = "original")
 # plt.plot(xaxis,generate_figure(1000,100,1,0,2001,-30))
-# K=np.array([0.37,0.37,0.8,0.25,0.52])
-# data = TransferFunction(L,K,config={'center_wavelength':1550e-9,'eta':0.996,'n_eff':2.2,'n_g':4.4,'alpha':52.96})
-# trans_data2 = data.simulate(xaxis)
-# plt.plot(axis,trans_data2,label = "predict")
-K=np.array([0.35,0.35,0.77,0.22,0.52])
-data = TransferFunction(L,K,config={'center_wavelength':1550e-9,'eta':0.996,'n_eff':2.2,'n_g':4.4,'alpha':52.96})
-trans_data2 = data.simulate(xaxis)
-plt.plot(axis,trans_data2,label = "predict2")
+
 plt.xlabel("Wavelength (nm)")
 plt.ylabel("Drop Port Power (dB)")
 plt.legend(bbox_to_anchor=(1,0),loc="lower right")
