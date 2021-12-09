@@ -99,15 +99,47 @@ def build_TransferFunction(config):
 
 #L=np.array([82.4e-6,82.4e-6,55.0e-6,82.4e-6,55.0e-6,82.4e-6,55.0e-6,55.0e-6])
 #K=np.array([0.2, 0.07, 0.47, 0.31, 0.06, 0.31, 0.32, 0.42, 0.49])
-L=np.array([82.4e-6,82.4e-6,55.0e-6,55.0e-6])
-K=np.array([0.37,0.39,0.74,0.22,0.44])
+# L=np.array([82.4e-6,82.4e-6,55.0e-6,55.0e-6])
+# K=np.array([0.16,0.79,0.72,0.38,0.49])
 
-xaxis = np.arange(1540e-9,1560e-9,0.01e-9)          #シミュレーション範囲1.54µ~1.56µ
-axis = np.arange(1540,1560.01,0.01)
+# xaxis = np.arange(1540e-9,1560e-9,0.01e-9)          #シミュレーション範囲1.54µ~1.56µ
+# axis = np.arange(1540,1560.01,0.01)
+# data = TransferFunction(L,K,config={'center_wavelength':1550e-9,'eta':0.996,'n_eff':2.2,'n_g':4.4,'alpha':52.96})
+# trans_data1 = data.simulate(xaxis)
+# plt.plot(axis,trans_data1,label = "original(K0=0.16)",color = "red")
+# plt.plot(xaxis,generate_figure(1000,100,1,0,2001,-30))
+# K=np.array([0.21,0.75,0.76,0.41,0.46])
+# data = TransferFunction(L,K,config={'center_wavelength':1550e-9,'eta':0.996,'n_eff':2.2,'n_g':4.4,'alpha':52.96})
+# trans_data1 = data.simulate(xaxis)
+# plt.plot(axis,trans_data1,label = "K0=0.21")
+
+# K=np.array([0.26,0.78,0.71,0.40,0.48])
+# data = TransferFunction(L,K,config={'center_wavelength':1550e-9,'eta':0.996,'n_eff':2.2,'n_g':4.4,'alpha':52.96})
+# trans_data1 = data.simulate(xaxis)
+# plt.plot(axis,trans_data1,label = "K0=0.26")
+
+# K=np.array([0.16,0.78,0.71,0.40,0.48])
+# data = TransferFunction(L,K,config={'center_wavelength':1550e-9,'eta':0.996,'n_eff':2.2,'n_g':4.4,'alpha':52.96})
+# trans_data1 = data.simulate(xaxis)
+# plt.plot(axis,trans_data1,label = "K0=0.16")
+
+# L=np.array([82.4e-6])
+# K=np.array([0.7,0.7])
+
+# xaxis = np.arange(1540e-9,1560e-9,0.01e-9)          #シミュレーション範囲1.54µ~1.56µ
+# axis = np.arange(1540,1560.01,0.01)
+# data = TransferFunction(L,K,config={'center_wavelength':1550e-9,'eta':0.996,'n_eff':2.2,'n_g':4.4,'alpha':52.96})
+# trans_data1 = data.simulate(xaxis)
+# plt.plot(axis,trans_data1)
+
+L=np.array([82.4e-6,41.2e-6])
+K=np.array([0.7,0.7,0.7])
+
+xaxis = np.arange(1520e-9,1560e-9,0.01e-9)          #シミュレーション範囲1.54µ~1.56µ
+axis = np.arange(1520,1560.01,0.01)
 data = TransferFunction(L,K,config={'center_wavelength':1550e-9,'eta':0.996,'n_eff':2.2,'n_g':4.4,'alpha':52.96})
 trans_data1 = data.simulate(xaxis)
-plt.plot(axis,trans_data1,label = "original")
-# plt.plot(xaxis,generate_figure(1000,100,1,0,2001,-30))
+plt.plot(axis,trans_data1)
 
 plt.xlabel("Wavelength (nm)")
 plt.ylabel("Drop Port Power (dB)")
